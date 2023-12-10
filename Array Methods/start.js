@@ -1,21 +1,64 @@
-function calculateAverageAge(persons) {
-    return persons.reduce((sum,e)=>sum+e.age,0)/persons.length;
-   
-}
+function uncompletedNotes(notes) {
+    // ...
+    const uncompleted=[];
+    let todos;
+    notes.forEach(e => {
+        todos=e.todos.filter(todo=>!todo.done);
+        if(todos.length>0){
+            uncompleted.push(todos);
+        }
+    });
+    return uncompleted;
+  }
   
-  const persons = [
-    { name: 'Paul', age: 16 },
-    { name: 'George', age: 17 },
-    { name: 'Lucas', age: 21 },
-    { name: 'Marco', age: 32 },
-    { name: 'Peter', age: 18 },
-    { name: 'Carl', age: 13 },
-    { name: 'Simon', age: 24 },
-    { name: 'Mark', age: 15 },
-    { name: 'Sandra', age: 34 },
-    { name: 'Alice', age: 28 }
+  const notes = [
+    {
+      id: 1,
+      description: "Workout program",
+      todos: [
+        {
+          id: 1,
+          name: "Push ups - 10 x 3",
+          done: false,
+        },
+        {
+          id: 2,
+          name: "Abdominals - 20 x 3",
+          done: true,
+        },
+        {
+          id: 3,
+          name: "Tapis Roulant - 15min",
+          done: true,
+        },
+      ],
+    },
+    {
+      id: 2,
+      description: "Front-end Roadmap",
+      todos: [
+        {
+          id: 1,
+          name: "Learn HTML",
+          done: true,
+        },
+        {
+          id: 2,
+          name: "Learn CSS",
+          done: true,
+        },
+        {
+          id: 3,
+          name: "Learn JavaScript",
+          done: true,
+        },
+        {
+          id: 4,
+          name: "Learn Angular",
+          done: false,
+        },
+      ],
+    },
   ];
   
-  const average = calculateAverageAge(persons);
-  console.log(persons);
-  console.log(average);
+  console.log(uncompletedNotes(notes));
