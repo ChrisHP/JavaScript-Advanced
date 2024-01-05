@@ -1,5 +1,15 @@
-function sum(num1, num2, num3, num4, num5) {
-    return num1 + num2 + num3 + num4 + num5;
-}
-
-console.log(sum(1, 2, 3, 4, 5));
+const person = {
+    id: 1,
+    firstName: 'Mario',
+    lastName: 'Rossi',
+    age: 25
+  };
+  
+  const id = person.id;
+  const personInfo = {
+    firstName: person.firstName,
+    lastName: person.lastName,
+    age: person.age
+  };
+  
+  console.log(id, personInfo);
