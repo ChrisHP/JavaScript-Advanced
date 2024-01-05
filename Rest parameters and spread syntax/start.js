@@ -1,15 +1,6 @@
-const person = {
-    id: 1,
-    firstName: 'Mario',
-    lastName: 'Rossi',
-    age: 25
-  };
+function sum(num1, num2, num3) {
+    return num1 + num2 + num3;
+  }
   
-  const id = person.id;
-  const personInfo = {
-    firstName: person.firstName,
-    lastName: person.lastName,
-    age: person.age
-  };
-  
-  console.log(id, personInfo);
+  const numbers = [1, 2, 3];
+  console.log(sum(numbers[0], numbers[1], numbers[2]));
