@@ -1,15 +1,14 @@
 const person = {
-    id: 1,
-    firstName: 'Mario',
-    lastName: 'Rossi',
-    age: 25
-  };
-  
-  const id = person.id;
-  const personInfo = {
-    firstName: person.firstName,
-    lastName: person.lastName,
-    age: person.age
-  };
-  
-  console.log(id, personInfo);
+  id: 1,
+  firstName: "Mario",
+  lastName: "Rossi",
+  age: 25,
+};
+
+separateId(person);
+
+function separateId({id,...personInfo}){
+    console.log(id, personInfo);
+}
+
+
