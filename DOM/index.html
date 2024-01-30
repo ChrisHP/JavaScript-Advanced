@@ -1,25 +1,30 @@
 <html>
-  <body>
-    <div id="container">
-      <form>
-        <div>
-          <label>First Name:</label>
-          <input type="text" class="form-input" id="firstName" value="Mario" />
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input type="text" class="form-input" id="lastName" value="Rossi" />
-        </div>
-        <div>
-          <label>Age:</label>
-          <input type="number" class="form-input" id="age" value="25" />
-        </div>
-      </form>
-    </div>
-  </body>
-</html>
 
-<script>
-  // code here
-  console.log(document.getElementById("firstName").value);
-</script>
+<body>
+    <div id="container">
+        <form>
+            <div>
+                <label>First Name:</label>
+                <input type="text" class="form-input" id="firstName" value="Mario" />
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input type="text" class="form-input" id="lastName" value="Rossi" />
+            </div>
+            <div>
+                <label>Age:</label>
+                <input type="number" class="form-input" id="age" value="25" />
+            </div>
+        </form>
+    </div>
+    <script>
+        const inputs = document.getElementsByClassName("form-input");
+        console.log(inputs);
+        for (const e of inputs) {
+            if (e.getAttribute("type") === "text")
+                console.log(e.value);
+        }
+    </script>
+</body>
+
+</html>
