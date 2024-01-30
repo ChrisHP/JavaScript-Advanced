@@ -4,7 +4,7 @@ const user = {
     age: 25,
   };
 function saveUser(user){
-    document.cookie=`user=${JSON.stringify(user)}`;
+    localStorage.setItem("user",JSON.stringify(user));
 }
 saveUser(user);
-console.log(document.cookie);
+console.log(localStorage.getItem("user"));
