@@ -1,0 +1,32 @@
+<html>
+
+<body>
+  <div id="container" style="display: flex; align-items: center;"></div>
+</body>
+
+</html>
+
+<script>
+  // code here
+  const url = "https://jsonplaceholder.typicode.com/todos/4"
+  async function recoverToDo(url) {
+    const response = await fetch(url);
+    return response;
+  }
+  function createElements(url) {
+    recoverToDo(url)
+      .then((response) => response.json())
+      .then(setValues)
+      .catch((err)=>console.error(err));
+  }
+  function setValues(json){
+    console.log(json);
+    const h2=document.createElement("h2");
+    h2.innerText=json.title;
+    const checkbox=document.createElement("input");
+    checkbox.setAttribute("type","checkbox");
+    checkbox.checked=json.completed;
+    document.getElementById("container").append(h2,checkbox);
+  }
+  createElements(url);
+</script>
