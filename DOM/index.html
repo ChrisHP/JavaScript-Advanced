@@ -18,11 +18,11 @@
         </form>
     </div>
     <script>
-        const inputs = document.getElementsByClassName("form-input");
-        console.log(inputs);
+        const inputs = document.getElementsByTagName("input");
         for (const e of inputs) {
-            if (e.getAttribute("type") === "text")
-                console.log(e.value);
+            if (e.previousElementSibling && e.previousElementSibling.nodeName === "LABEL") {
+                console.log(`${e.previousElementSibling.innerHTML} ${e.value}`);
+            }
         }
     </script>
 </body>
